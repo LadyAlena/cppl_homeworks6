@@ -75,6 +75,7 @@ namespace container {
 	template<typename T>
 	constexpr vector<T>& vector<T>::operator=(const vector& other) {
 
+		if (this == &other) { return *this; }
 		if (arr != nullptr) { delete[] arr; }
 
 		size_ = other.size_;
